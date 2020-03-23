@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    # ポートの構成(ソース変更時にDockerを再起動しないで済むようホストのポート8000とイメージの8000をマッピング)
+    ports:
+      - "8000:8000"
+    # プロジェクトのアプリディレクトリをイメージのアプリディレクトリにマッピング
+    volumes:
+      - ./app:/app
+    # アプリを実行するためにコンテナで使用するコマンド
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
