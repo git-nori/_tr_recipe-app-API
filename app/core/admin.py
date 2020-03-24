@@ -9,7 +9,7 @@ from . import models
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name']
-    # userAdmin画面のフォームの設定
+    # 編集時のフォームの設定
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (_('Personal Info'), {'fields': ('name', )}),
@@ -18,6 +18,13 @@ class UserAdmin(BaseUserAdmin):
             {'fields': ('is_active', 'is_staff', 'is_superuser')}
         ),
         (_('Important dates'), {'fields': ('last_login',)})
+    )
+    # 作成時のフォームの設定
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')
+        }),
     )
 
 
