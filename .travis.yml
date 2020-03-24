@@ -1,0 +1,14 @@
+# githubプッシュ時にpythonサーバー起動
+language: python
+python:
+  - "3.6"
+
+services:
+  - docker
+
+# pipでdocker-composeをインストール
+before_script: pip install docker-compose
+
+# testとリンティングの実行
+script:
+  - docker-compose run app sh -c "python manage.py test && flake8"
