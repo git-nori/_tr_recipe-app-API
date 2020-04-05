@@ -126,6 +126,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# web serverに静的ファイルを見に行く際のURL
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+# アップロードされたファイルの格納先のルート
+STATIC_ROOT = '/vol/web/static/'
+MEDIA_ROOT = '/vol/web/media/'
 
 AUTH_USER_MODEL = 'core.User'
