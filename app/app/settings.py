@@ -132,6 +132,6 @@ MEDIA_URL = '/media/'
 
 # アップロードされたファイルの格納先のルート
 STATIC_ROOT = '/vol/web/static/'
-MEDIA_ROOT = '/vol/web/media/'
+MEDIA_ROOT = 'vol/web/media/'
 
 AUTH_USER_MODEL = 'core.User'
